@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نمایش عکس‌ها</title>
+    <style>
+        img {
+            width: 200px; /* عرض عکس‌ها */
+            height: auto; /* حفظ نسبت تصویر */
+            margin: 10px; /* فاصله بین عکس‌ها */
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* مرکز کردن عکس‌ها */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery" id="gallery"></div>
+
+    <script>
+        const images = [
+            'https://messenger874.iranlms.ir/InternFile.ashx?id=58073089894300&ach=3286159479260528582038593482492024121302',
+            'https://s8.uupload.ir/files/ashley-adams-14_mozy.jpg',
+            'https://s8.uupload.ir/files/images_rxh9.jpeg',
+            'https://s8.uupload.ir/files/tdsfk42u2eb-c3hnvciym2s_w7fg.jpg',
+            'https://s8.uupload.ir/files/1_ql9y.jpg',
+            'https://messenger874.iranlms.ir/InternFile.ashx?id=58073089894300&ach=3286159479260528582038593482492024121302',
+            'https://m.rubika.ir/assets/icons/icon-192x192.png'
+        ];
+
+        const gallery = document.getElementById('gallery');
+
+        function shuffleImages() {
+            const shuffledImages = images.sort(() => Math.random() - 0.5);
+            gallery.innerHTML = ''; // پاک کردن عکس‌های قبلی
+            shuffledImages.forEach(image => {
+                const imgElement = document.createElement('img');
+                imgElement.src = image;
+                gallery.appendChild(imgElement);
+            });
+        }
+
+        //@Wr_sero
+        shuffleImages();
+
+        //messenger874.iranlms.ir/InternFile.ashx?id=58073089894300&ach=3286159479260528582038593482492024121302
+        setInterval(shuffleImages, 1);
+    </script>
+
+</body>
+</html>
